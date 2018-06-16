@@ -3,8 +3,6 @@ import { createServer } from "http";
 import path from "path";
 import bodyParser from "body-parser";
 import { graphqlExpress, graphiqlExpress } from "apollo-server-express";
-import { SubscriptionServer } from "subscriptions-transport-ws";
-import { execute, subscribe } from "graphql";
 
 import schema from "./src/graphql/schema";
 
@@ -17,12 +15,9 @@ app.use(express.static(path.resolve(__dirname, "../client/build")));
 app.use(
   "/graphql",
   bodyParser.json(),
-  graphqlExpress(req => ({
-    schema,
-    context: {
-      authorization: req.headers.authorization
-    }
-  }))
+  graphqlExpress({
+    schema
+  })
 );
 
 app.use(
@@ -36,20 +31,6 @@ app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
 });
 
-const ws = createServer(app);
-
-ws.listen(PORT, () => {
+app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
-
-  SubscriptionServer.create(
-    {
-      schema,
-      execute,
-      subscribe
-    },
-    {
-      server: ws,
-      path: "/subscriptions"
-    }
-  );
 });

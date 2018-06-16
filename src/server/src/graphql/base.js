@@ -6,10 +6,6 @@ const Base = `
     type Mutation {
         dummy: Boolean
     }
-
-    type Subscription {
-        dummy: Boolean
-    }
 `;
 
 export default Base;

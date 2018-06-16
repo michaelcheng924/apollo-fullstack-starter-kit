@@ -12,41 +12,20 @@ const knex = require("knex")({
   useNullAsDefault: true
 });
 
-knex.schema.hasTable("channels").then(hasTable => {
+knex.schema.hasTable("count").then(hasTable => {
   if (!hasTable) {
     knex.schema
-      .createTable("channels", table => {
+      .createTable("count", table => {
         table.increments("id");
-        table.string("name");
+        table.integer("value");
       })
       .then(() => {
-        knex("channels")
+        knex("count")
           .insert({
-            name: "Seed channel"
+            value: 1
           })
           .then(() => {
-            console.log('Table "channels" created and seeded');
-          });
-      });
-  }
-});
-
-knex.schema.hasTable("messages").then(hasTable => {
-  if (!hasTable) {
-    knex.schema
-      .createTable("messages", table => {
-        table.increments("messageId");
-        table.string("text");
-        table.integer("channel");
-      })
-      .then(() => {
-        knex("messages")
-          .insert({
-            text: "Welcome to Seed Channel!",
-            channel: 1
-          })
-          .then(() => {
-            console.log('Table "messages" created and seeded');
+            console.log('Table "count" created and seeded');
           });
       });
   }

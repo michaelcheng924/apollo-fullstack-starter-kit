@@ -1,26 +1,20 @@
 import { withClientState } from "apollo-link-state";
 
 import {
-  channelPageDefaults,
-  channelPageMutations
-} from "../modules/channel/state-link";
-import {
-  channelsPageDefaults,
-  channelsPageMutations
-} from "../modules/channels/state-link";
+  countPageDefaults,
+  countPageMutations
+} from "../modules/count/state-link";
 
 function getStateLink(cache) {
   return withClientState({
     cache,
     resolvers: {
       Mutation: {
-        ...channelPageMutations,
-        ...channelsPageMutations
+        ...countPageMutations
       }
     },
     defaults: {
-      ...channelPageDefaults,
-      ...channelsPageDefaults
+      ...countPageDefaults
     }
   });
 }
