@@ -51,6 +51,17 @@ http://apollo-fullstack-starter-kit.herokuapp.com/
 1.  `heroku create app-name`
 1.  `git push heroku master`
 
+## Apollo/GraphQL Examples
+
+https://github.com/michaelcheng924/apollo-graphql-examples
+
+The repository above contains examples for:
+
+1. Subscriptions
+2. Authentication (WIP)
+3. Pagination (WIP)
+4. React Native (WIP)
+
 ## Todos/Contributing
 
 1.  If you have an idea or want to contribute, simply create an issue and/or submit a pull request!
