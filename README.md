@@ -1,4 +1,4 @@
-# Starter kit with Apollo server, client, and subscriptions
+# Starter kit with Apollo server and client
 
 The goals of this starter kit are to:
 
@@ -12,8 +12,9 @@ http://apollo-fullstack-starter-kit.herokuapp.com/
 ## Features
 
 1.  Node/Express server with apollo-server-express
-1.  apollo-link-http, apollo-link-error, apollo-link-state, and apollo-link-ws wired up on client
-1.  Subscriptions wired up between server and client
+1.  apollo-link-http, apollo-link-error, and apollo-link-state wired up on client
+1.  Starter code for http and state link
+1.  Schemas and resolvers organized by model/module
 1.  create-react-app for client
 1.  Easy deployment to Heroku
 
@@ -44,10 +45,6 @@ http://apollo-fullstack-starter-kit.herokuapp.com/
 
 6.  Edit the code in src/server and src/client
 
-#### Test subscriptions
-
-7.  Click `Enter` for a channel. Open another tab and copy the channel link there. Add a message. Message should show up in both tabs.
-
 ## Deploying to Heroku
 
 1.  Download Heroku CLI and log in
@@ -56,5 +53,4 @@ http://apollo-fullstack-starter-kit.herokuapp.com/
 
 ## Todos/Contributing
 
-1.  Apollo Engine
-2.  If you have an idea or want to contribute, simply create an issue and/or submit a pull request!
+1.  If you have an idea or want to contribute, simply create an issue and/or submit a pull request!
