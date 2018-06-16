@@ -16,6 +16,7 @@ http://apollo-fullstack-starter-kit.herokuapp.com/
 1.  Starter code for http and state link
 1.  Schemas and resolvers organized by model/module
 1.  create-react-app for client
+1.  React Router wired up
 1.  Easy deployment to Heroku
 
 ## Getting Started
