@@ -17,9 +17,12 @@ app.use(express.static(path.resolve(__dirname, "../client/build")));
 app.use(
   "/graphql",
   bodyParser.json(),
-  graphqlExpress({
-    schema
-  })
+  graphqlExpress(req => ({
+    schema,
+    context: {
+      authorization: req.headers.authorization
+    }
+  }))
 );
 
 app.use(
